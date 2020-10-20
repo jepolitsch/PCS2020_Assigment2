@@ -1,0 +1,138 @@
+1) Solve Me First:
+
+def solveMeFirst(a,b):
+	return(a+b)
+
+
+num1 = int(input())
+num2 = int(input())
+res = solveMeFirst(num1,num2)
+print(res)
+
+2)Simple Array Sum:
+
+def simpleArraySum(ar):
+    sum = 0
+    for k in range(ar_count):
+        b = int(ar[k])
+        sum += b
+    return(sum)
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    ar_count = int(input())
+
+    ar = list(map(int, input().rstrip().split()))
+
+    result = simpleArraySum(ar)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+    
+   
+3) compare the triplets:
+
+def compareTriplets(a, b):
+    scorea = 0
+    scoreb = 0
+    for k in range(len(a)):
+        if a[k] > b[k]:
+            scorea += 1
+        if a[k] < b[k]:
+            scoreb += 1
+    return(str(scorea), str(scoreb))
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    a = list(map(int, input().rstrip().split()))
+
+    b = list(map(int, input().rstrip().split()))
+
+    result = compareTriplets(a, b)
+
+    fptr.write(' '.join(map(str, result)))
+    fptr.write('\n')
+
+    fptr.close()
+    
+4) A very big sum:
+
+def aVeryBigSum(ar):
+    return(sum(ar))
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    ar_count = int(input())
+
+    ar = list(map(int, input().rstrip().split()))
+
+    result = aVeryBigSum(ar)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+    
+5) Mini-Max Sum:
+
+def miniMaxSum(arr):
+    arr = list(arr)
+    maxi = max(arr)
+    mini = min(arr)
+    maxl = sum(arr)-mini
+    minl = sum(arr)-maxi
+    print(minl, maxl)
+
+if __name__ == '__main__':
+    arr = list(map(int, input().rstrip().split()))
+    miniMaxSum(arr)
+    
+6)Plus Minus
+import math
+
+def plusMinus(arr):
+    positive = 0
+    negative = 0
+    zero = 0
+    len_arr =len(arr)
+    for i in range(n):
+        if arr[i] > 0:
+            positive += 1
+        elif arr[i] == 0:
+            zero += 1
+        elif arr[i] < 0:
+            negative += 1
+    print("%.6f" % (positive/len_arr))
+    print("%.6f" % (negative/len_arr))
+    print("%.6f" % (zero/len_arr))
+
+if __name__ == '__main__':
+    n = int(input())
+    arr = list(map(int, input().rstrip().split()))
+    plusMinus(arr)
+
+7) Birthday Cake Candles:
+
+import math
+import os
+import random
+import re
+import sys
+
+def birthdayCakeCandles(candles):
+    maxi = max(candles)
+    return(candles.count(maxi))
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    candles_count = int(input().strip())
+
+    candles = list(map(int, input().rstrip().split()))
+
+    result = birthdayCakeCandles(candles)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+8) Time conversion:
