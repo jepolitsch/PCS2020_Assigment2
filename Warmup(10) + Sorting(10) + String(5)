@@ -88,7 +88,7 @@ if __name__ == '__main__':
     arr = list(map(int, input().rstrip().split()))
     miniMaxSum(arr)
     
-6)Plus Minus
+6) Plus Minus
 import math
 
 def plusMinus(arr):
@@ -180,7 +180,7 @@ if __name__ == '__main__':
 
     staircase(n)
 
-10 Diagonal Difference:
+10) Diagonal Difference:
 
 def diagonalDifference(arr):
     one = 0
@@ -212,6 +212,192 @@ def countingSort(arr):
     for k in arr:
         retu.append(k)
     return(sorted(retu))
+    
+14) Correctness and the Loop Invariant:
+ 
+ def insertion_sort(l):
+    for i in range(1, len(l)):
+        j = i-1
+        key = l[i]
+        while (j >= 0) and (l[j] > key):
+           l[j+1] = l[j]
+           j -= 1
+        l[j+1] = key
+	
+15) Quicksort 1:
+
+def quickSort(arr):
+    return(sorted(arr))
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    result = quickSort(arr)
+
+    fptr.write(' '.join(map(str, result)))
+    fptr.write('\n')
+
+    fptr.close()
+    
+16) Find the median:
+
+def findMedian(arr):
+    return(statistics.median(arr))
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    result = findMedian(arr)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+    
+17) Big Sorting:
+ 
+ def bigSorting(unsorted):
+    k = list()
+    for s in sorted(unsorted, key=int):
+        k.append(s)
+    return(k)
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input())
+
+    unsorted = []
+
+    for _ in range(n):
+        unsorted_item = input()
+        unsorted.append(unsorted_item)
+
+    result = bigSorting(unsorted)
+
+    fptr.write('\n'.join(result))
+    fptr.write('\n')
+
+    fptr.close()
+
+18) Insertion Sort 1:
+
+def insertionSort1(n, arr):
+    target = arr[-1]
+    idx = n-2
+    for x in range(n-1):
+        if (idx >= 0) and (target < arr[idx]):
+            arr[idx+1] = arr[idx]
+            print(' '.join(map(str, arr)))
+            idx -= 1
+    arr[idx+1] = target
+    print(' '.join(map(str, arr)))
+    
+19) Insertion sort 2:
+    
+def insertionSort2(n, arr):
+    runs = n
+    arra = arr
+    for i in range(1,len(arra)):
+        count = arra[i]
+        track = i-1
+        while (track >= 0) and (arra[track] > count) :
+            arra[track+ 1] = arra[track]
+            track = track-1
+        arra[track+ 1] = count
+        for x in range(len(arra)):
+            print(arra[x], end= ' ')
+        print('\n', end ='')
+	
+20) Running Time of Algorithms
+
+def runningTime(arr):
+    count = 0
+    for i in range(n): 
+        for j in range(i + 1, n): 
+            if (arr[i] > arr[j]): 
+                count += 1
+            else:
+                count = count
+    return(count)
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    result = runningTime(arr)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
+    
+ 21) CamelCase:
+ 
+ def camelcase(s):
+    string = ''
+    for x in s:
+        if x.isupper():
+            string += (' '+x)
+        else:
+            string += (x)
+    lst = string.split(' ')
+    return(len(lst))
+
+22) Strong Password:
+
+def minimumNumber(n, password):
+    numbers = "0123456789"
+    lower_case = "abcdefghijklmnopqrstuvwxyz"
+    upper_case = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    special_characters = "!@#$%^&*()-+"
+    needed = 0
+    num = 1
+    low = 1
+    up = 1
+    spec = 1
+    if len(password) < 6:
+        needed = 6-n
+    for x in password:
+        if x in numbers:
+            num = 0
+        elif x in lower_case:
+            low = 0
+        elif x in upper_case:
+            up = 0
+        elif x in special_characters:
+            spec = 0
+    if ((num+low+spec+up) > needed) or (needed == 0):
+        return(num+low+spec+up)
+    else:
+        return (needed)
+ 23) Mars Exploration:
+ 
+ def marsExploration(s):
+    count = 0
+    for x in range(0, len(s), 3):
+        if s[x:x+3] == 'SOS':
+            count = count
+        else:
+            k = s[x:x+3]
+            if k[0] != 'S':
+                count = count + 1
+            if k[1] != 'O':
+                count = count + 1
+            if k[2] != 'S':
+                count = count + 1
+            print(k)
+    return(count)
+    
+  
+
+
 
 
 
