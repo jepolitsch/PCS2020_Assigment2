@@ -377,7 +377,7 @@ def minimumNumber(n, password):
         return(num+low+spec+up)
     else:
         return (needed)
- 23) Mars Exploration:
+23) Mars Exploration:
  
  def marsExploration(s):
     count = 0
@@ -394,6 +394,8 @@ def minimumNumber(n, password):
                 count = count + 1
             print(k)
     return(count)
+    
+24) 
     
   
 
